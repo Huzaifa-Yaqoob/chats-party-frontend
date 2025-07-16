@@ -1,10 +1,16 @@
-import { Button } from '@/components/ui/button';
+import Page from '@/components/common/Page';
+import Hero from '@/components/sections/Hero';
+import ToggleTheme from '@/components/buttons/ToggleTheme';
 
-export default function Home() {
+function Home() {
   return (
-    <div>
-      Home
-      <Button>Hello</Button>
-    </div>
+    <>
+      <ToggleTheme />
+      <Page className={'grid place-content-center'}>
+        <Hero />
+      </Page>
+    </>
   );
 }
+
+export default Home;
