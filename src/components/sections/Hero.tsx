@@ -2,6 +2,7 @@ import Section from '@/components/common/Section';
 import { Title, Large } from '@/components/ui/bloom/typography';
 import { Button } from '@/components/ui/button';
 import { AuroraText } from '@/components/magicui/aurora-text';
+import AuthForm from '@/components/forms/auth';
 
 function Hero() {
   return (
@@ -12,9 +13,7 @@ function Hero() {
         </AuroraText>
       </Title>
       <div className={'mt-4 flex items-center justify-center gap-2'}>
-        <Button>
-          <Large>Sign Up</Large>
-        </Button>
+        <AuthForm />
         <Large>To Start</Large>
       </div>
     </Section>
