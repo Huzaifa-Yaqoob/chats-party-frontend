@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/dialog';
 import { Large } from '@/components/ui/bloom/typography';
 import { Button } from '@/components/ui/button';
-import LoginForm from '@/components/forms/auth/LoginForm';
+import Login from '@/components/forms/auth/LoginForm';
 import Register from '@/components/forms/auth/Register';
 
 function AuthForm() {
@@ -28,7 +28,7 @@ function AuthForm() {
         <DialogHeader>
           <DialogTitle>{form === 'r' ? 'Register' : 'Log In'}</DialogTitle>
         </DialogHeader>
-        {form === 'r' ? <Register /> : <LoginForm />}
+        {form === 'r' ? <Register /> : <Login />}
         <DialogFooter>
           {form === 'r' ? (
             <>

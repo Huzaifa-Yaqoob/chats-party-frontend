@@ -10,11 +10,11 @@ import { PasswordInput } from '@/components/ui/bloom/password-input';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
-function LoginForm() {
+function Login() {
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      email: '',
+      username: '',
       password: '',
     },
   });
@@ -28,17 +28,31 @@ function LoginForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
-          name="email"
+          name="username"
           render={({ field }) => (
             <FieldRenderer label="Username">
-              <Input placeholder="username" {...field} />
+              <Input {...field} />
             </FieldRenderer>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <FormField
+          control={form.control}
+          name="password"
+          render={({ field }) => (
+            <FieldRenderer label="Password">
+              <PasswordInput {...field} />
+            </FieldRenderer>
+          )}
+        />
+        <div className={'flex items-center justify-end gap-2'}>
+          <Button type="button" variant={'outline'} onClick={() => form.reset()}>
+            Reset
+          </Button>
+          <Button type="submit">Submit</Button>
+        </div>
       </form>
     </Form>
   );
 }
 
-export default LoginForm;
+export default Login;
